@@ -5,7 +5,8 @@ import {
   AlertIOS
 } from 'react-native';
 
-import openShare from 'react-native-open-share'
+
+import openShare from 'React-Native-iOS-OpenShare'
 
 
 export default class Share {

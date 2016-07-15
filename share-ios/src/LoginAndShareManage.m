@@ -20,7 +20,7 @@ NSString *const QQShareCallBack = @"QQShareCallBack";
 NSString *const WeixinShareCallBack = @"WeixinShareCallBack";
 
 
-RCT_EXPORT_MODULE(@"");
+RCT_EXPORT_MODULE();
 
 //  添加回调消息
 - (NSArray<NSString *> *)supportedEvents
