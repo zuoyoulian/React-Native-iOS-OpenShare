@@ -1,76 +1,9 @@
-# React-Native-iOS-OpenShare
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ * @flow
+ */
 
-实现了QQ、微信、微博的登录和分享功能。
-#### built from[OpenShare](https://github.com/100apps/openshare)
-
-## 安装
-1. 在工程目录下运行命令：npm install https://github.com/zuoyoulian/React-Native-iOS-OpenShare.git --save；  
-2. 在Xcode工程目录下新建“New Group”，并命名“OpenShare”；  
-3. 在OpenShare下添加文件，选择`node_modules` --> `React-Native-iOS-OpenShare` --> 'share-ios' --> `src`下所有的文件进行添加；  
-4. 打开Info.plist文件`Open As => Source code`，在文件中添加
-
-```
-<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLName</key>
-			<string>RNShare</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>wx508e4ac1aebc3477</string>
-				<string>tencent1105466267</string>
-				<string>tencent1105466267.content</string>
-				<string>QQ41E4139B</string>
-				<string>wb3196575651</string>
-				<string>renrenshare228525</string>
-				<string>fb776442542471056</string>
-			</array>
-		</dict>
-	</array>
-	<key>CFBundleVersion</key>
-	<string>1</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>mqqOpensdkSSoLogin</string>
-		<string>mqzone</string>
-		<string>mqqapi</string>
-		<string>mqqwpa</string>
-		<string>mqqOpensdkSSoLogin</string>
-		<string>weibosdk</string>
-		<string>weixin</string>
-		<string>wechat</string>
-	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-```
-
-## AppDelegate.m
-1.添加头文件 `#import "OpenShareHeader.h"`  
-2.在`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`方法中添加应用在各平台下注册的信息  
-
-```
-[OpenShare connectQQWithAppId:@"1105466267"];
-[OpenShare connectWeiboWithAppKey:@"3196575651"];
-[OpenShare connectWeixinWithAppId:@"wx508e4ac1aebc3477"];
-```  
-3.在`-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation`方法中添加回调代码：  
-
-```
--(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
-  //第二步：添加回调
-  if ([OpenShare handleOpenURL:url]) {
-    return YES;
-  }
-  return YES;
-}
-```
-## 使用
-代码示例：
-
-```
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -346,4 +279,3 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('Demo', () => Demo);
-```
