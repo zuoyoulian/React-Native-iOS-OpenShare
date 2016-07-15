@@ -31,7 +31,10 @@ class Demo extends Component {
      Share.IsWeixinInstalled().then(result => {
 	   if(result) {
 		 Share.weixinLogin(response => {
-		   console.log('response', response)
+		   AlertIOS.alert(
+	           'response',
+	           JSON.stringify(response)
+	         );
 	     })
 	   } else {
 		   AlertIOS.alert(
@@ -45,7 +48,10 @@ class Demo extends Component {
      Share.IsQQInstalled().then(result => {
 	   if(result) {
 	     Share.qqLogin(response => {
-	       console.log('response', response)
+	       AlertIOS.alert(
+	           'response',
+	           JSON.stringify(response)
+	         );
 		 })
 	    } else {
 		    AlertIOS.alert(
@@ -59,7 +65,10 @@ class Demo extends Component {
      Share.IsWeiboInstalled().then(result => {
 	   if(result) {
 		 Share.weiboLogin(response => {
-		   console.log('response', response)
+		   AlertIOS.alert(
+	           'response',
+	           JSON.stringify(response)
+	         );
 	     })
 	   } else {
 		   AlertIOS.alert(

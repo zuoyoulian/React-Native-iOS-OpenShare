@@ -103,7 +103,6 @@ export default class Share {
   shareToQQFriends(info: Object, callBack: Function) {
 	  openShare.shareToQQFriendsWithInfo(info);
 	  openShare.addListener('QQShareCallBack');
-	  console.log('1111111')
 	  DeviceEventEmitter.addListener(
 	    'QQShareCallBack',
 	    (response) => {
