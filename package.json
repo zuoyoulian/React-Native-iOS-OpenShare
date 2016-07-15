@@ -1,0 +1,23 @@
+{
+  "name": "React-Native-iOS-OpenShare",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuoyoulian/React-Native-iOS-OpenShare.git"
+  },
+  "keywords": [
+    "share",
+    "react-native"
+  ],
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/zuoyoulian/React-Native-iOS-OpenShare/issues"
+  },
+  "homepage": "https://github.com/zuoyoulian/React-Native-iOS-OpenShare#readme"
+}
