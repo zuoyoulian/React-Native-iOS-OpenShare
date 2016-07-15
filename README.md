@@ -3,6 +3,10 @@
 实现了QQ、微信、微博的登录和分享功能。
 #### built from[OpenShare](https://github.com/100apps/openshare)
 
+## Demo示例
+![登录](https://github.com/zuoyoulian/React-Native-iOS-OpenShare/blob/master/login1.PNG?raw=true) 
+![分享](https://github.com/zuoyoulian/React-Native-iOS-OpenShare/blob/master/share1.PNG?raw=true) 
+
 ## 文件说明
 share-ios文件夹是封装的登录、分享模块；  
 share.ios.js是封装的js的函数，在工程中直接调用该文件中的登录或者分享函数；  
