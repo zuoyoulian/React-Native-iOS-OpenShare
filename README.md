@@ -3,11 +3,66 @@
 实现了QQ、微信、微博的登录和分享功能。
 #### built from[OpenShare](https://github.com/100apps/openshare)
 
+## 文件说明
+share-ios文件夹是封装的登录、分享模块；  
+share.ios.js是封装的js的函数，在工程中直接调用该文件中的登录或者分享函数；  
+授权登录函数说明：  
+例如微信授权登录函数： 
+
+```
+weixinLogin(callBack: Function) {
+   openShare.wechatLogin();
+   openShare.addListener('WeixinLoginCallBack');
+   DeviceEventEmitter.addListener(
+     'WeixinLoginCallBack',
+     (response) => {
+        callBack(response)
+        openShare.removeListeners(1); 
+        DeviceEventEmitter.removeAllListeners('WeixinLoginCallBack');
+    }
+  );
+}
+
+参数callBack：是将登录的信息进行回调；
+第一行代码：openShare.wechatLogin()，通过oc的openShare对象调用登录方法；  
+第二行代码：oc对象openShare添加微信登录的回调监听；
+第三行代码：js对象DeviceEventEmitter添加监听，并且注册监听回调函数，当登录成功或者失败，oc对象会将登录信息返回；
+回调函数中：callBack(response)是将返回的信息回调给方法调用；
+          removeListeners函数，是将监听移除；
+```
+
+分享函数说明：  
+例如分享到微博：
+
+```
+shareToWeibo(info: Object, callBack: Function) {
+	openShare.shareToWeiboWithInfo(info);
+	openShare.addListener('WeiboShareCallBack');
+	DeviceEventEmitter.addListener(
+	  'WeiboShareCallBack',
+	  (response) => {
+	    callBack(response)
+	    openShare.removeListeners(1);
+	    DeviceEventEmitter.removeAllListeners('WeiboShareCallBack');
+	  }
+	);
+}
+
+参数：
+info：分享的信息，
+      参数info格式：
+	    title 标题
+	    desc 描述
+	    thumbnail 缩略图  图片传地址
+	    image  原图   图片传地址
+	    link  链接
+callBack：将分享的结果进行回调；
+```
+
 ## 安装
 1. 在工程目录下运行命令：npm install https://github.com/zuoyoulian/React-Native-iOS-OpenShare.git --save；  
-2. 在Xcode工程目录下新建“New Group”，并命名“OpenShare”；  
-3. 在OpenShare下添加文件，选择`node_modules` --> `React-Native-iOS-OpenShare` --> 'share-ios' --> `src`下所有的文件进行添加；  
-4. 打开Info.plist文件`Open As => Source code`，在文件中添加
+2. 在Xcode工程目录下新建“New Group”，并命名“OpenShare”；在OpenShare下添加文件，选择`node_modules` --> `React-Native-iOS-OpenShare` --> 'share-ios' --> `src`下所有的文件进行添加；  
+3. 打开Info.plist文件`Open As => Source code`，在文件中添加
 
 ```
 <key>CFBundleURLTypes</key>
