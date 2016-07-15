@@ -22,8 +22,6 @@
 				<string>tencent1105466267.content</string>
 				<string>QQ41E4139B</string>
 				<string>wb3196575651</string>
-				<string>renrenshare228525</string>
-				<string>fb776442542471056</string>
 			</array>
 		</dict>
 	</array>
