@@ -16,9 +16,13 @@ import {
 } from 'react-native';
 
 import Share from './node_modules/React-Native-iOS-OpenShare/share-ios/share'
+import DeviceInfo from 'react-native-device-info'
 
 class Demo extends Component {
 
+  componentDidMount() {
+	console.log('DeviceInfo.getDeviceId()', DeviceInfo.getUniqueID())
+  }
   constructor(props) {
     super(props);
     
