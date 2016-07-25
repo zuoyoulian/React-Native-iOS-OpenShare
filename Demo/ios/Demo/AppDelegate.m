@@ -34,9 +34,9 @@
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
   
-  [OpenShare connectQQWithAppId:@"1105466267"];
-  [OpenShare connectWeiboWithAppKey:@"3196575651"];
-  [OpenShare connectWeixinWithAppId:@"wx508e4ac1aebc3477"];
+  [OpenShare connectQQWithAppId:@"xxxxxxxxxxxxxx"];
+  [OpenShare connectWeiboWithAppKey:@"xxxxxxxxxxxxxx"];
+  [OpenShare connectWeixinWithAppId:@"xxxxxxxxxxxxxxxxxx"];
   
   return YES;
 }

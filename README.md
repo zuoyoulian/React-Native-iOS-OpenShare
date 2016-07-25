@@ -76,11 +76,11 @@ callBack：将分享的结果进行回调；
 			<string>RNShare</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx508e4ac1aebc3477</string>
-				<string>tencent1105466267</string>
-				<string>tencent1105466267.content</string>
-				<string>QQ41E4139B</string>
-				<string>wb3196575651</string>
+				<string>wxxxxxxxxxxxxxxx</string>
+				<string>tencentxxxxxxxxxxx</string>
+				<string>tencentxxxxxxxxx.content</string>
+				<string>xxxxxxxxx</string>
+				<string>wbxxxxxxxxxxx</string>
 			</array>
 		</dict>
 	</array>
@@ -109,9 +109,9 @@ callBack：将分享的结果进行回调；
 2.在`- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions`方法中添加应用在各平台下注册的信息  
 
 ```
-[OpenShare connectQQWithAppId:@"1105466267"];
-[OpenShare connectWeiboWithAppKey:@"3196575651"];
-[OpenShare connectWeixinWithAppId:@"wx508e4ac1aebc3477"];
+[OpenShare connectQQWithAppId:@"xxxxxxxxxx"];
+[OpenShare connectWeiboWithAppKey:@"xxxxxxx"];
+[OpenShare connectWeixinWithAppId:@"xxxxxxxxx"];
 ```  
 3.在`-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation`方法中添加回调代码：  
 
